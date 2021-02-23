@@ -1,23 +1,66 @@
-import logo from './logo.svg';
+
 import './App.css';
+import MenuContainer from './Menu/MenuContainer'
+import ViewContainer from './viewContainer/ViewContainer'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams
+} from "react-router-dom";
+import CardsDetail from './viewContainer/CardsDetail'
 
 function App() {
+
+  const baseUrl = "https://www.breakingbadapi.com/api/";
+  const characters = `${baseUrl}characters/`; 
+  const episodes = `${baseUrl}episodes/`;
+  const quotes = `${baseUrl}quotes/`;
+
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          
+          <Route path="/characters/:id">
+            <MenuContainer />
+            <CardsDetail />
+            
+          </Route>
+
+          <Route path="/characters">
+            <MenuContainer />
+            <ViewContainer 
+            url = {characters}
+            />
+          </Route>
+
+          <Route path="/episodes">
+            <MenuContainer />
+            <ViewContainer 
+            url = {episodes}
+            />
+          </Route>
+
+          <Route path="/quotes">
+            <MenuContainer />
+            <ViewContainer 
+            url = {quotes}
+            />
+          </Route>
+
+          <Route path="/">
+            <MenuContainer />
+            <ViewContainer />
+          </Route>
+
+          
+
+        </Switch>
+      </Router>
     </div>
   );
 }

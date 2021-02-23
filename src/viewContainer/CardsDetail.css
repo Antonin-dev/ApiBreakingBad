@@ -1,0 +1,16 @@
+.image{
+
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.block{
+
+    display: flex;
+    
+    text-align: center;
+    min-height: 100vh;
+    
+}

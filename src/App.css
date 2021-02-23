@@ -1,5 +1,15 @@
+body *{
+  box-sizing: content-box;
+  background-color: #1D1D1D;
+  
+
+}
+
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  
 }
 
 .App-logo {
