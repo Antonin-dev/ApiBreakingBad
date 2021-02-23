@@ -10,7 +10,7 @@ function EpisodeCard(props) {
 
     tableauCard = props.dataCard.map((value)=>{
         return <div className ='card col-11 bg-secondary ml-1 mb-3 text-light test'>
-            <h5 className='card-title bg-info'>{value.title}</h5>
+            <h5 className='card-title bg-secondary'>{value.title}</h5>
             <p className='card-text bg-secondary'>Saison : {value.season}</p>
             <p className='card-text bg-secondary'>Diffusion : {value.air_date}</p>
             <p className='card-text bg-secondary'>Characters : {value.characters}</p>
